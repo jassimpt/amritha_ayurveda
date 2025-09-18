@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/amritha_ayurveda.git
+   git clone https://github.com/jassimpt/amritha_ayurveda.git
    cd amritha_ayurveda
    ```
 
@@ -65,13 +65,7 @@ flutter build ios --release
 ## Download App 📱
 
 ### Android
-- [Download APK](your-download-link-here)
-- [Google Play Store](your-play-store-link)
-
-### iOS
-- [App Store](your-app-store-link)
-
-*Replace the links above with your actual download URLs*
+- [Download APK](https://drive.google.com/file/d/15BD7xoAZbVN9Y0NZax9-3oBpc9QALug1/view?usp=sharing)
 
 ## Project Structure
 
