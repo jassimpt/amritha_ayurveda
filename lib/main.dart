@@ -1,4 +1,5 @@
 import 'package:amritha_ayurveda/features/modules/auth/controller/auth_controller.dart';
+import 'package:amritha_ayurveda/features/modules/home/controller/home_controller.dart';
 import 'package:amritha_ayurveda/features/modules/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,12 +19,15 @@ class AmirthaAyurveda extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => AuthController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => HomeController(),
         )
       ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
-        title: 'MentorMeter',
+        title: 'Amritha Ayrveda',
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle(
