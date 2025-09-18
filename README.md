@@ -1,0 +1,1 @@
+# amritha_ayurveda
