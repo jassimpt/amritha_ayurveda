@@ -10,4 +10,5 @@ class ImageConstants {
   static const logoBig = "${basePathIcons}logo_big.png";
   static const logoSmall = "${basePathIcons}logo-small.png";
   static const bellIcon = "${basePathIcons}clarity_bell-line.png";
+  static const pdfSignature = "${basePathImages}signature.png";
 }

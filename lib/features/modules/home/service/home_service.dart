@@ -18,7 +18,7 @@ class HomeService {
     );
     _dio = _dioInterceptor.dio;
   }
-
+  // SERVICE FUNCTION TO FETCH PATIENTS DATA
   getPatientsData({
     Map<String, dynamic>? additionalParams,
   }) async {

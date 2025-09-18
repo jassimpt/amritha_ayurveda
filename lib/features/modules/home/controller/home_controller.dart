@@ -6,6 +6,9 @@ class HomeController extends ChangeNotifier {
   bool patientListLoader = false;
   List<Patient> patients = [];
   final HomeService _service = HomeService();
+
+  // CONTROLLER METHOD TO MANAGE STATE OF PATIENTS DATA
+  
   getPatientsData({
     Map<String, dynamic>? additionalParams,
   }) async {

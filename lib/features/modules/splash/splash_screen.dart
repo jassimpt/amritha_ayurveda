@@ -1,5 +1,8 @@
+import 'package:amritha_ayurveda/core/constants/app_constants.dart';
 import 'package:amritha_ayurveda/core/constants/image_constants.dart';
+import 'package:amritha_ayurveda/core/utils/shared_preference_utils.dart';
 import 'package:amritha_ayurveda/features/modules/auth/login_screen.dart';
+import 'package:amritha_ayurveda/features/modules/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,17 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      Duration(seconds: 3),
-      () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LoginScreen(),
-          ),
-        );
-      },
-    );
+    checkLogin();
   }
 
   @override
@@ -50,6 +43,32 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  checkLogin() async {
+    bool logStatus = await SharedPreferencesUtils.getBoolValue(
+          key: AppConstants.isUserLogged,
+        ) ??
+        false;
+
+    await Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        if (logStatus) {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ));
+        } else {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginScreen(),
+              ));
+        }
+      },
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:amritha_ayurveda/features/modules/auth/controller/auth_controller.dart';
 import 'package:amritha_ayurveda/features/modules/home/controller/home_controller.dart';
+import 'package:amritha_ayurveda/features/modules/register/controller/register_controller.dart';
 import 'package:amritha_ayurveda/features/modules/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,12 +18,9 @@ class AmirthaAyurveda extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => AuthController(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => HomeController(),
-        )
+        ChangeNotifierProvider(create: (context) => AuthController()),
+        ChangeNotifierProvider(create: (context) => HomeController()),
+        ChangeNotifierProvider(create: (context) => RegisterController())
       ],
       child: MaterialApp(
         navigatorKey: navigatorKey,

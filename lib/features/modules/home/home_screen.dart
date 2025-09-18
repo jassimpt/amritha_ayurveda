@@ -6,6 +6,7 @@ import 'package:amritha_ayurveda/features/modules/home/widgets/patien_card.dart'
 import 'package:amritha_ayurveda/features/modules/home/widgets/register_button.dart';
 import 'package:amritha_ayurveda/features/modules/home/widgets/search_section.dart';
 import 'package:amritha_ayurveda/features/modules/home/widgets/sort_section.dart';
+import 'package:amritha_ayurveda/features/modules/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -62,7 +63,14 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             )),
             RegisterButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RegisterScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),

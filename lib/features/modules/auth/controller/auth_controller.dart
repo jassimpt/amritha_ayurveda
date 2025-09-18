@@ -29,6 +29,10 @@ class AuthController extends ChangeNotifier {
         key: AppConstants.userAuthTokenKey,
         value: accessToken,
       );
+      await SharedPreferencesUtils.setBoolValue(
+        key: AppConstants.isUserLogged,
+        value: true,
+      );
 
       return AuthResult(
         success: true,

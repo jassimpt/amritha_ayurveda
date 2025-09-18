@@ -1,3 +1,5 @@
+import 'package:amritha_ayurveda/core/utils/shared_preference_utils.dart';
+import 'package:amritha_ayurveda/features/modules/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -10,7 +12,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: IconButton(
         icon: const Icon(Icons.arrow_back, color: Colors.black),
-        onPressed: () => Navigator.pop(context),
+        onPressed: () async {
+          await SharedPreferencesUtils.clearAll();
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginScreen(),
+            ),
+            (route) => false,
+          );
+        },
       ),
       actions: [
         Stack(

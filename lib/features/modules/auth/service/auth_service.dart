@@ -17,6 +17,8 @@ class AuthService {
     _dio = _dioInterceptor.dio;
   }
 
+    // SERVICE FUNCTION FOR AUTHENTICATION
+
   Future<Map<String, dynamic>> login(String username, String password) async {
     try {
       final formData = FormData.fromMap({
